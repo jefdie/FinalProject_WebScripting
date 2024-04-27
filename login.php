@@ -11,7 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT babyfood, diapers,wipes FROM BabyStuff";
+$sql = "SELECT babyfood, diapers, wipes FROM BabyStuff";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

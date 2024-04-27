@@ -1,0 +1,26 @@
+header {
+    background-color: rgb(0, 159, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+header a {
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+    color: white;
+    float: left;
+    font-size: 16px;
+}
+
+.logo {
+    margin-left: auto;
+}
+
+.account {
+    margin-right: auto;
+}
+
+body {
+    background-color: rgb(38, 144, 220);
+}
