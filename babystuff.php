@@ -1,32 +1,33 @@
 <?php
+// Database connection parameters
+$host = 'localhost';
+$dbname = 'groceries';
+$username = 'username';
+$password = 'password';
 
-$host = 'localhost';    // Change as necessary
-  $data = 'groceries'; // Change as necessary
-  $user = 'username';         // Change as necessary
-  $pass = 'password';        // Change as necessary
-  $chrs = 'utf8mb4';
-  $attr = "mysql:host=$host;dbname=$data";"charset=$chrs";
-  $opts =
-  [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-  ];
-?>
-
-<?php
 try {
+    // Connect to the database
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $conn = new PDO("mysql:host=$host;dbname=grocery", $user, $pass);
-  
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-} catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
+    // Prepare and execute SQL query
+    $stmt = $pdo->query("SELECT * FROM babystuff");
+    
+    // Fetch data
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Process and display data
+    if ($data) {
+        foreach ($data as $row) {
+            echo ", Diapers: " . $row['diapers'] . ", Wipes: " . $row['wipes'] . "<br>";
+              // Add more columns as needed
+        }
+    } else {
+        echo "No records found.";
+    }
+} catch (PDOException $e) {
+    die("Error: Could not connect. " . $e->getMessage());
 }
-
-
-
-
 ?>
+
+<a href="index.php"><button>Go to Main Page</button></a>
