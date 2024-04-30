@@ -1,5 +1,15 @@
 <?php
+
 session_start();
+
+
+// Check if user is already logged in
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    // Redirect to main page
+    header("location: search.php");
+exit;
+    
+}
 
 // Database connection parameters
 $host = 'localhost';
@@ -15,11 +25,8 @@ try {
     die("Error: Could not connect. " . $e->getMessage());
 }
 
-// Check if the user is already logged in, if yes, redirect them to the main page
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-    header('Location: login.php');
-    exit;
-}
+
+
 
 // Define error variables
 $username_error = $password_error = $login_error = '';

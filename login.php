@@ -1,3 +1,5 @@
+<a href="index.php"><button>Go to Main Page</button></a>
+
 <?php
 
 include_once("authenticate.php");
