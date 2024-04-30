@@ -1,9 +1,9 @@
 <?php
 
 $host = 'localhost';    // Change as necessary
-  $data = 'grocery'; // Change as necessary
-  $user = 'admin';         // Change as necessary
-  $pass = 'your_password';        // Change as necessary
+  $data = 'groceries'; // Change as necessary
+  $user = 'username';         // Change as necessary
+  $pass = 'password';        // Change as necessary
   $chrs = 'utf8mb4';
   $attr = "mysql:host=$host;dbname=$data";"charset=$chrs";
   $opts =
