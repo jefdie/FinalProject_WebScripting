@@ -1,7 +1,7 @@
 <!-- search.php -->
 <?php
 // Connect to the database
-$pdo = new PDO("mysql:host=localhost;dbname=your_database", "username", "password");
+$pdo = new PDO("mysql:host=localhost;dbname=groceryinfo", "username", "password");
 
 // Retrieve search query from GET parameter
 $query = isset($_GET['query']) ? $_GET['query'] : '';

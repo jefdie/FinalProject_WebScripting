@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
   //  echo "babyfood: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+ //   echo ", Diapers: " . $row['diapers'] . ", Wipes: " . $row['wipes'] . "<br>";
     echo ", Diapers: " . $row['diapers'] . ", Wipes: " . $row['wipes'] . "<br>";
 
   }

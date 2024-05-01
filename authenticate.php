@@ -71,6 +71,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
+// Start session
+session_start();
+
+// Set session variables
+$_SESSION["loggedin"] = true;
+
+// Redirect to main page
+header("location: search.php");
+exit;
+
 ?>
 
 <!DOCTYPE html>
@@ -100,3 +111,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </body>
 </html>
+
+
