@@ -1,20 +1,41 @@
-<!-- search.php -->
 <?php
-// Connect to the database
-$pdo = new PDO("mysql:host=localhost;dbname=groceryinfo", "username", "password");
+// Database connection parameters
+$host = 'localhost';
+$dbname = 'groceries';
+$username = 'username';
+$password = 'password';
+
+// Create connection
+$conn = new mysqli($host,$username, $password, $dbname);
+
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 // Retrieve search query from GET parameter
 $query = isset($_GET['query']) ? $_GET['query'] : '';
 
-// Prepare SQL query to search for products
-$stmt = $pdo->prepare("SELECT * FROM products WHERE name LIKE ?");
-$stmt->execute(["%$query%"]);
-$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Prepare SQL statement to search for items
+$sql = "SELECT * FROM babystuff WHERE name LIKE '%$query%'";
+$result = $conn->query($sql);
 
-// Display search results
-foreach ($products as $product) {
-    echo "<h2>{$product['name']}</h2>";
-    echo "<p>Price: {$product['price']}</p>";
-    echo "<p>Store: {$product['store']}</p>";
+if ($result) {
+    // Output data of each row
+//    foreach ($data as $row) {
+    while($row = $result->fetch_assoc()) {
+        echo ", Diapers: " . $row['diapers'] . ", Wipes: " . $row['wipes'] . "<br>";
+        // Output other item details as needed
+    }
+} else {
+    echo "No results found";
 }
+
+// Close connection
+$conn->close();
 ?>
+
+
+
+<a href="index.php"><button>Go to Main Page</button></a>

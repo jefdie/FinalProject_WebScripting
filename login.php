@@ -4,17 +4,6 @@
 
 include_once("authenticate.php");
 
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "groceries";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
 
 $sql = "SELECT babyfood, diapers, wipes FROM babystuff";
 $result = $conn->query($sql);
