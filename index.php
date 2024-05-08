@@ -24,10 +24,12 @@
       <br />
       <h5>
         <ul>
-          <li><a href="babystuff.php">Babies</a></li>
+          <li><a href="Authenticate.php">Authenticate</a></li>
           <li><a href="Beverage.php">Beverage</a></li>
-          <li><a href="Meat.php">Meat</a></li>
-          <li><a href="Pets.php">Pets</a></li>
+          <li><a href="Babystuff.php">Babystuff</a></li>
+          <li><a href="ComparePrice.php">ComparePrice</a></li>
+          <li><a href="Search.php">Search</a></li>
+          <li><a href="Review_form.php">Review</a></li>
         </ul>
       </h5>
     </header>
