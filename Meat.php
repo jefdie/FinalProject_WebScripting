@@ -32,7 +32,11 @@
       </h5>
     </header>
     <main>
-
+    <h1>Price Comparison</h1>
+    <form action="search.php" method="GET">
+        <input type="text" name="query" placeholder="Search for a product...">
+        <button type="submit">Search</button>
+    </form>
     </main>
   </body>
 </html>
