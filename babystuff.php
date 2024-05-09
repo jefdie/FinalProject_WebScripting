@@ -1,3 +1,9 @@
+
+  <head>
+ 
+    <link rel="stylesheet" href="style.css">
+  </head>
+
 <?php
 // Database connection parameters
 $host = 'localhost';

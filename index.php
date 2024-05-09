@@ -24,10 +24,10 @@
       <br />
       <h5>
         <ul>
-          <li><a href="Authenticate.php">Authenticate</a></li>
+          <li><a href="Authenticate.php">Login</a></li>
           <li><a href="Beverage.php">Beverage</a></li>
           <li><a href="Babystuff.php">Babystuff</a></li>
-          <li><a href="ComparePrice.php">ComparePrice</a></li>
+          <li><a href="ComparePrice.php">Compare Price</a></li>
           <li><a href="Search.php">Search</a></li>
           <li><a href="Review_form.php">Review</a></li>
         </ul>
@@ -42,4 +42,27 @@
       </h5>
     </main>
   </body>
+</html>
+
+<?php
+session_start();
+
+// Redirect user to login page if not logged in
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: login.php");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome, <?php echo $_SESSION["username"]; ?>!</h1>
+    <a href="logout.php">Logout</a>
+</body>
 </html>

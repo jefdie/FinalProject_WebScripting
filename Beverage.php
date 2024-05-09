@@ -1,7 +1,5 @@
 <a href="index.php"><button>Go to Main Page</button></a>
 
-
-
 <!-- index.php -->
 <!DOCTYPE html>
 <html lang="en">
@@ -16,5 +14,6 @@
         <input type="text" name="query" placeholder="Search for a product...">
         <button type="submit">Search</button>
     </form>
-</body>
-</html>
+    </style>
+</head>
+
