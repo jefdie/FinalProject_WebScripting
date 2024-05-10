@@ -1,9 +1,38 @@
-<<<<<<< HEAD
-<a href="index.php"><button>Go to Main Page</button></a>
+<?php
+    include_once "index.php";
+    require_once "login.php";
 
-<!-- index.php -->
-=======
->>>>>>> 5e93c29441099ae5cabc22fcda3045ead4a913d0
+    class Product
+    {
+        public $id, $name, $description, $price, $idstore;
+        function __construct($id, $name, $description, $price, $idstore) 
+        {
+            $this->id = $id;
+            $this->name = $name;
+            $this->description = $description;
+            $this->price = $price;
+            $this->idstore = $idstore;
+        }
+    }
+    
+    $products = array();
+
+    $query = "SELECT * FROM products";
+    $result = $pdo->query($query);
+
+    
+    while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        $id = htmlspecialchars($row['id']);
+        $name = htmlspecialchars($row['name']);
+        $description = htmlspecialchars($row['description']);
+        $price = htmlspecialchars($row['price']);
+        $idstore = htmlspecialchars($row['idstore']);
+
+        $product = new Product($id, $name, $description, $price, $idstore);
+        $products[$id] = $product;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,12 +72,16 @@
         <input type="text" name="query" placeholder="Search for a product...">
         <button type="submit">Search</button>
     </form>
-<<<<<<< HEAD
-    </style>
-</head>
 
-=======
+    <?php
+    foreach ($products as $product) {
+        echo "<div>";
+        echo "<h2>" . $product->name . "</h2>";
+        echo "<p>Description: " . $product->description . "</p>";
+        echo "<p>Price: $" . $product->price . "<p>";
+        echo "</div>";
+    }
+    ?>
     </main>
-  </body>
+</body>
 </html>
->>>>>>> 5e93c29441099ae5cabc22fcda3045ead4a913d0
