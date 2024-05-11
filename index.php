@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="assets/styles.css" />
     <script src="assets/filter.js" defer></script>
     <?php
-      include_once("Beverage.php");
+     // include_once("Beverage.php");
     ?>
   </head>
   <body>
