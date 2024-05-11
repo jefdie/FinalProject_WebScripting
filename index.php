@@ -30,6 +30,7 @@
           <li><a href="ComparePrice.php">Compare Price</a></li>
           <li><a href="Search.php">Search</a></li>
           <li><a href="Review_form.php">Review</a></li>
+          <li><a href="payment.php">Make a Payment</a></li>
         </ul>
       </h5>
     </header>
