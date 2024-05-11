@@ -45,8 +45,6 @@
         buying option for you!
       </h5>
     </main>
-    <br><br><br><br>
-    <img src="images/targetbabystuff.jpg"><img src="images/quillbeverage.jpg"><img src="images/targetpets.jpg">
   </body>
 </html>
 
