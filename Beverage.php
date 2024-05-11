@@ -1,6 +1,6 @@
 <?php
     include_once "index.php";
-    //require_once "login.php";
+    require_once "login.php";
 
     class Product
     {
