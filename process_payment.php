@@ -1,5 +1,5 @@
 <?php
-require 'paypal/autoload.php';
+require 'autoload.php';
 
 // Set up PayPal API credentials - Looking into it
 $apiContext = new \PayPal\Rest\ApiContext(
